@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Future Projects",
+    "media": "Media",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Welcome to the Future of Motorsport in India",
+    "headline": "Grand Prix India",
+    "subhead": "Leading the charge in bringing world-class racing experiences to India. Experience the speed, precision, and luxury of motorsport excellence.",
+    "cta_primary": "Explore Projects",
+    "cta_secondary": "Learn More"
+  },
+  "home": {
+    "about_title": "About Grand Prix India",
+    "about_snippet": "Pioneering motorsport excellence in India since 2006, bringing world-class racing experiences to passionate fans.",
+    "projects_title": "Future Projects",
+    "projects_subtitle": "Exciting motorsport initiatives on the horizon",
+    "media_title": "Media & Gallery",
+    "media_subtitle": "Capturing the essence of speed and luxury",
+    "contact_title": "Get in Touch",
+    "contact_subtitle": "Join us in shaping the future of motorsport in India"
+  },
+  "about": {
+    "page_title": "About Us",
+    "company_title": "Our Story",
+    "company_description": "Grandprix (India) Private Limited (GPI), the flagship company of the GPI Group, was established in 2006 with a bold mission to redefine India's sporting and entertainment landscape. What began as a focused initiative to promote motorsports in India has evolved into a multi-sport, entertainment-first ecosystem that inspires a new generation of fans, athletes, and innovators. At the heart of this vision stands Mr. Bharat Sadanand Shetty, Founder and Managing Director of Grandprix (India) Private Limited. A visionary entrepreneur from Mumbai, Mr. Shetty identified a critical gap in India's sports infrastructure especially in the field of motorsports. During his travels across Europe, he witnessed how motorsports had become cultural cornerstones, driving tourism, youth engagement, and global recognition. In contrast, India's growing community of enthusiasts in cities like Mumbai and Pune lacked the platforms to develop and showcase their talent. Motivated by this insight, Mr. Shetty set out to bridge that gap. His most ambitious initiative yet, the Maharashtra Sports Village (MSV), embodies this dream a one-of-its-kind integrated sports and entertainment complex designed to host national and international sporting events. With a focus on Formula 1, MotoGP, NASCAR, and other high-octane formats, the MSV aims to position India on the global motorsport map while fostering opportunities for athletes, fans, and communities alike. Today, Grandprix (India) Private Limited stands as a symbol of innovation, passion, and progress, combining world-class infrastructure with a deep commitment to India's sporting future. Guided by Mr. Bharat Sadanand Shetty's leadership and entrepreneurial spirit, GPI continues to push boundaries transforming dreams into destinations and redefining what's possible for sports and entertainment in India.",
+    "founder_title": "Founder",
+    "founder_name": "Bharat Sadanand Shetty",
+    "founder_bio": "Bharat Sadanand Shetty is the visionary Founder and Managing Director of Grandprix (India) Private Limited, a leading Mumbai-based company in the events, entertainment, and recreation industry. With over a decade of entrepreneurial experience, Mr. Shetty has built Grandprix into a brand known for innovation, creativity, and excellence. Under his leadership, the company has delivered a wide range of successful sports events, entertainment projects, and brand experiences across India. His focus on customer satisfaction, quality, and sustainable growth continues to define Grandprix's reputation as one of the most trusted names in Mumbai's event and recreation sector. Driven by passion and guided by integrity, Bharat Sadanand Shetty remains committed to creating value, empowering his team, and leading Grandprix (India) Private Limited toward a future built on innovation and excellence.",
+    "timeline_title": "Our Journey",
+    "timeline_2006": "Founded in 2006 (GPI incorporated)",
+    "timeline_growth": "Expanded vision: from motorsports to multi-sport entertainment ecosystem",
+    "timeline_msv": "Maharashtra Sports Village (MSV) spotlight: integrated sports & entertainment complex",
+    "timeline_future": "Developing next-generation racing and sports experiences across India"
+  },
+  "projects": {
+    "page_title": "Future Projects",
+    "filter_all": "All Projects",
+    "filter_planned": "Planned",
+    "filter_development": "In Development",
+    "status_planned": "Planned",
+    "status_development": "In Development",
+    "view_details": "View Project",
+    "close": "Close"
+  },
+  "media": {
+    "page_title": "Media & Gallery",
+    "filter_all": "All Media",
+    "filter_photos": "Photos",
+    "filter_videos": "Videos",
+    "watch_video": "Watch Video"
+  },
+  "contact": {
+    "page_title": "Contact Us",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_subject": "Subject",
+    "form_message": "Message",
+    "subject_general": "General Inquiry",
+    "subject_media": "Media Request",
+    "subject_partnership": "Partnership Opportunity",
+    "submit": "Send Message",
+    "press_email": "Press inquiries: info@grandprixindia.in"
+  },
+  "footer": {
+    "tagline": "Pioneering motorsport excellence in India",
+    "quick_links": "Quick Links",
+    "follow_us": "Follow Us",
+    "copyright": "© 2025 Grandprix (India) Private Limited. All rights reserved."
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  }
+}
+

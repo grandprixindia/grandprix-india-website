@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos Futuros",
+    "media": "Medios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "eyebrow": "Bienvenido al Futuro del Automovilismo en India",
+    "headline": "Grand Prix India",
+    "subhead": "Liderando la carga en traer experiencias de carreras de clase mundial a India. Experimenta la velocidad, precisión y lujo de la excelencia en el automovilismo.",
+    "cta_primary": "Explorar Proyectos",
+    "cta_secondary": "Saber Más"
+  },
+  "home": {
+    "about_title": "Acerca de Grand Prix India",
+    "about_snippet": "Pioneros en excelencia de automovilismo en India desde 2006, trayendo experiencias de carreras de clase mundial a fanáticos apasionados.",
+    "projects_title": "Proyectos Futuros",
+    "projects_subtitle": "Emocionantes iniciativas de automovilismo en el horizonte",
+    "media_title": "Medios y Galería",
+    "media_subtitle": "Capturando la esencia de la velocidad y el lujo",
+    "contact_title": "Ponte en Contacto",
+    "contact_subtitle": "Únete a nosotros para dar forma al futuro del automovilismo en India"
+  },
+  "about": {
+    "page_title": "Acerca de Nosotros",
+    "company_title": "Nuestra Historia",
+    "company_description": "Grandprix (India) Private Limited (GPI), la empresa insignia del Grupo GPI, se estableció en 2006 con una misión audaz: redefinir el panorama deportivo y de entretenimiento de India. Lo que comenzó como una iniciativa enfocada en promover el automovilismo en India ha evolucionado en un ecosistema multideportivo centrado en el entretenimiento que inspira a una nueva generación de fanáticos, atletas e innovadores. En el corazón de esta visión se encuentra el Sr. Bharat Sadanand Shetty, Fundador y Director General. Durante sus viajes por Europa, fue testigo de cómo el automovilismo se había convertido en piedras angulares culturales. Motivado por esta visión, el Sr. Shetty se propuso cerrar esa brecha. Su iniciativa más ambiciosa, el Maharashtra Sports Village (MSV), encarna este sueño: un complejo integrado de deportes y entretenimiento único diseñado para albergar eventos deportivos nacionales e internacionales. Hoy, Grandprix (India) Private Limited se erige como un símbolo de innovación, pasión y progreso, combinando infraestructura de clase mundial con un profundo compromiso con el futuro deportivo de India.",
+    "founder_title": "Nuestro Fundador",
+    "founder_name": "Bharat Sadanand Shetty",
+    "founder_bio": "Bharat Sadanand Shetty es el visionario Fundador y Director General de Grandprix (India) Private Limited, una empresa líder con sede en Mumbai en la industria de eventos, entretenimiento y recreación. Con más de una década de experiencia empresarial, el Sr. Shetty ha construido Grandprix como una marca conocida por la innovación, creatividad y excelencia. Bajo su liderazgo, la empresa ha entregado una amplia gama de eventos deportivos exitosos, proyectos de entretenimiento y experiencias de marca en toda India. Su enfoque en la satisfacción del cliente, la calidad y el crecimiento sostenible continúa definiendo la reputación de Grandprix como uno de los nombres más confiables en el sector de eventos y recreación de Mumbai. Impulsado por la pasión y guiado por la integridad, Bharat Sadanand Shetty sigue comprometido con la creación de valor, el empoderamiento de su equipo y liderar Grandprix (India) Private Limited hacia un futuro construido sobre innovación y excelencia.",
+    "timeline_title": "Nuestro Recorrido",
+    "timeline_2006": "Fundada en 2006 (GPI incorporada)",
+    "timeline_growth": "Visión expandida: del automovilismo al ecosistema de entretenimiento multideportivo",
+    "timeline_msv": "Destacado de Maharashtra Sports Village (MSV): complejo integrado de deportes y entretenimiento",
+    "timeline_future": "Desarrollando experiencias de carreras y deportes de próxima generación en toda India"
+  },
+  "projects": {
+    "page_title": "Proyectos Futuros",
+    "filter_all": "Todos los Proyectos",
+    "filter_planned": "Planificado",
+    "filter_development": "En Desarrollo",
+    "status_planned": "Planificado",
+    "status_development": "En Desarrollo",
+    "view_details": "Ver Proyecto",
+    "close": "Cerrar"
+  },
+  "media": {
+    "page_title": "Medios y Galería",
+    "filter_all": "Todos los Medios",
+    "filter_photos": "Fotos",
+    "filter_videos": "Videos",
+    "watch_video": "Ver Video"
+  },
+  "contact": {
+    "page_title": "Contáctanos",
+    "form_name": "Nombre",
+    "form_email": "Correo Electrónico",
+    "form_subject": "Asunto",
+    "form_message": "Mensaje",
+    "subject_general": "Consulta General",
+    "subject_media": "Solicitud de Medios",
+    "subject_partnership": "Oportunidad de Asociación",
+    "submit": "Enviar Mensaje",
+    "press_email": "Consultas de prensa: info@grandprixindia.in"
+  },
+  "footer": {
+    "tagline": "Pioneros en excelencia de automovilismo en India",
+    "quick_links": "Enlaces Rápidos",
+    "follow_us": "Síguenos",
+    "copyright": "© 2025 Grandprix (India) Private Limited. Todos los derechos reservados."
+  },
+  "common": {
+    "learn_more": "Saber Más",
+    "loading": "Cargando...",
+    "error": "Algo salió mal"
+  }
+}
+

@@ -1,0 +1,7 @@
+# robots.txt for Grand Prix India
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://grandprixindia.com/sitemap.xml
+

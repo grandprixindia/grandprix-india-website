@@ -1,0 +1,8 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#1e1e1e"/>
+  <rect x="100" y="120" width="80" height="160" fill="none" stroke="#b69849" stroke-width="2" opacity="0.4"/>
+  <rect x="260" y="120" width="80" height="160" fill="none" stroke="#b69849" stroke-width="2" opacity="0.4"/>
+  <rect x="420" y="120" width="80" height="160" fill="none" stroke="#b69849" stroke-width="2" opacity="0.4"/>
+  <text x="300" y="340" font-family="serif" font-size="28" fill="#b69849" text-anchor="middle">Pit Crew Precision</text>
+</svg>
+

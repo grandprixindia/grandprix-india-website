@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="24" fill="#1e1e1e"/>
+  <path d="M32 192c0-53 67-80 128-80h32v80h-64v-40h32c18 0 32-8 32-24s-14-24-32-24H128v88H32z" fill="#ffffff" opacity="0.9"/>
+  <text x="128" y="110" text-anchor="middle" font-family="serif" font-size="56" fill="#b69849" font-weight="700">GPI</text>
+  <rect x="20" y="20" width="216" height="216" rx="20" fill="none" stroke="#b69849" stroke-width="4" opacity="0.6"/>
+</svg>

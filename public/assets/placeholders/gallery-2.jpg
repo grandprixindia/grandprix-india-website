@@ -1,0 +1,6 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#2a2a2a"/>
+  <rect x="150" y="100" width="300" height="200" fill="none" stroke="#b69849" stroke-width="2" opacity="0.5"/>
+  <text x="300" y="210" font-family="serif" font-size="35" fill="#ffffff" text-anchor="middle">Track View</text>
+</svg>
+

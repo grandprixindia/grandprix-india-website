@@ -1,0 +1,72 @@
+═══════════════════════════════════════════════════════════
+📸 QUICK IMAGE REPLACEMENT REFERENCE
+═══════════════════════════════════════════════════════════
+
+All images are in this folder:
+👉 /Users/bharatshetty/Desktop/Dad/GPI Website/public/assets/placeholders/
+
+═══════════════════════════════════════════════════════════
+🔥 TOP PRIORITY - REPLACE THESE FIRST:
+═══════════════════════════════════════════════════════════
+
+1. HERO BACKGROUND (Landing Page Main Image)
+   📁 File: hero-1.jpg
+   📏 Size: 1920x1080px (landscape)
+   💡 Use: Racing track, sports facility, or iconic venue shot
+   
+2. FOUNDER PHOTO (About Us Page)
+   📁 File: founder.jpg
+   📏 Size: 600x800px (portrait)
+   💡 Use: Professional headshot of Bharat Sadanand Shetty
+   
+3. ABOUT PREVIEW (Homepage - beside "About Grand Prix India")
+   📁 File: about-preview.jpg
+   📏 Size: 800x800px (square)
+   💡 Use: Company building, team photo, or facility
+
+═══════════════════════════════════════════════════════════
+📌 SECONDARY IMAGES:
+═══════════════════════════════════════════════════════════
+
+4. ABOUT BACKGROUND
+   📁 File: about-company.jpg
+   📏 Size: 1920x1080px
+   💡 Note: Shows at 5% opacity as subtle background
+   
+5. PROJECT IMAGES (4 images)
+   📁 Files: project-1.jpg, project-2.jpg, project-3.jpg, project-4.jpg
+   📏 Size: 800x600px each
+   
+6. GALLERY IMAGES (8 images)
+   📁 Files: gallery-1.jpg through gallery-8.jpg
+   📏 Size: 800x600px each
+
+═══════════════════════════════════════════════════════════
+✅ HOW TO REPLACE (2 STEPS):
+═══════════════════════════════════════════════════════════
+
+Step 1: Go to folder
+   /Users/bharatshetty/Desktop/Dad/GPI Website/public/assets/placeholders/
+
+Step 2: Replace the file
+   - Delete old image (e.g., hero-1.jpg)
+   - Add your image with SAME NAME (hero-1.jpg)
+   
+That's it! Refresh browser and see your image! 🎉
+
+═══════════════════════════════════════════════════════════
+🎯 CURRENT PLACEHOLDER IMAGES:
+═══════════════════════════════════════════════════════════
+
+These placeholder images already exist in your project.
+Just replace them with your real photos!
+
+✅ All placeholders are already there
+✅ Just drop your images with the same filenames
+✅ Website will automatically use them
+
+═══════════════════════════════════════════════════════════
+
+
+
+

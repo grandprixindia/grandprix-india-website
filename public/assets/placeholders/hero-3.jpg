@@ -1,0 +1,15 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="hero3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1e1e;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#hero3)"/>
+  <path d="M 0 540 Q 480 340, 960 540 T 1920 540" stroke="#b69849" stroke-width="3" fill="none" opacity="0.4"/>
+  <path d="M 0 560 Q 480 760, 960 560 T 1920 560" stroke="#b69849" stroke-width="3" fill="none" opacity="0.4"/>
+  <text x="960" y="480" font-family="serif" font-size="90" fill="#b69849" text-anchor="middle">THE FUTURE OF</text>
+  <text x="960" y="600" font-family="serif" font-size="130" fill="#ffffff" text-anchor="middle" font-weight="bold">RACING</text>
+  <text x="960" y="680" font-family="sans-serif" font-size="40" fill="#b69849" text-anchor="middle" letter-spacing="8">IN INDIA</text>
+</svg>
+
