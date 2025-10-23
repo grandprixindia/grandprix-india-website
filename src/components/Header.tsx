@@ -66,18 +66,20 @@ export default function Header({ locale, t }: HeaderProps) {
       {/* Modern Floating Header */}
       <motion.header 
         className="fixed top-4 left-0 right-0 z-50 px-4"
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ 
-          duration: 0.8, 
-          ease: "easeOut",
-          type: "spring",
-          stiffness: 100,
-          damping: 20
+          duration: 0.6, 
+          ease: "easeOut"
         }}
-        style={{ zIndex: 9999 }}
+        style={{ 
+          zIndex: 9999,
+          top: '16px',
+          left: '0',
+          right: '0'
+        }}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto relative">
           <motion.nav 
             className={`relative rounded-full transition-all duration-700 ${
               scrolled
@@ -89,7 +91,11 @@ export default function Header({ locale, t }: HeaderProps) {
               boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
             }}
             transition={{ duration: 0.3 }}
-            style={{ opacity: 1 }}
+            style={{ 
+              opacity: 1,
+              position: 'relative',
+              zIndex: 10
+            }}
           >
             {/* Beautiful progress indicator */}
             <motion.div 
@@ -266,7 +272,7 @@ export default function Header({ locale, t }: HeaderProps) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center lg:hidden"
+            className="fixed inset-0 bg-white z-30 flex flex-col items-center justify-center lg:hidden"
           >
             <button
               onClick={() => setMobileMenuOpen(false)}
