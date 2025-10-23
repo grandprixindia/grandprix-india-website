@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 interface Card3DProps {
@@ -14,12 +14,11 @@ export default function Card3D({ children, className = '' }: Card3DProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Optimized spring settings for better performance
-  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 25 });
-  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 25 });
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['2deg', '-2deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-2deg', '2deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['10deg', '-10deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-10deg', '10deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -55,9 +54,13 @@ export default function Card3D({ children, className = '' }: Card3DProps) {
       }}
       className={`relative h-full ${className}`}
     >
-      <div className="h-full" style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}>
+      <div className="h-full" style={{ transform: 'translateZ(75px)', transformStyle: 'preserve-3d' }}>
         {children}
       </div>
     </motion.div>
   );
 }
+
+
+
+

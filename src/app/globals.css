@@ -12,63 +12,6 @@
     background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
   }
 
-  /* Aggressive performance optimizations */
-  * {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: auto;
-  }
-
-  /* Mobile performance optimizations */
-  @media (max-width: 768px) {
-    /* Optimize animations for mobile performance */
-    * {
-      animation-duration: 0.3s !important;
-      transition-duration: 0.2s !important;
-    }
-    
-    /* Optimize transforms for better performance */
-    .transform-3d,
-    [style*="transform"] {
-      transform: translateZ(0);
-      will-change: transform;
-    }
-    
-    /* Optimize scroll performance */
-    .overflow-auto,
-    .overflow-scroll {
-      -webkit-overflow-scrolling: touch;
-    }
-    
-    /* Optimize backdrop blur performance */
-    .backdrop-blur-md {
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    
-    /* Ensure content is always visible on mobile */
-    .mobile-fallback {
-      opacity: 1 !important;
-      transform: none !important;
-    }
-  }
-
-  /* Reduce motion for users who prefer it */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
   /* Account for floating header */
   main {
     padding-top: 0;
@@ -248,6 +191,34 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Reduce blur effects on mobile for better performance */
+  .blur-3xl {
+    filter: blur(20px);
+  }
+  
+  /* Simplify glassmorphism on mobile */
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-dark/5 backdrop-blur-sm border border-dark/10;
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .shimmer::before {
+    animation: none;
+  }
+  
+  /* Optimize text gradients for mobile */
+  .text-gradient {
+    animation: none;
+    background-image: linear-gradient(135deg, #b69849 0%, #d4af37 100%);
   }
 }
 
