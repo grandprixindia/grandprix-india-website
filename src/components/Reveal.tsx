@@ -10,7 +10,7 @@ export default function Reveal({ children, delay = 0 }: { children: React.ReactN
       className="h-full"
       initial={reduce ? undefined : { opacity: 0, y: 16 }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
     >
       {children}

@@ -71,6 +71,7 @@ export default function Header({ locale, t }: HeaderProps) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{ zIndex: 9999 }}
       >
         <div className="max-w-6xl mx-auto">
           <motion.nav 

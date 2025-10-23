@@ -49,6 +49,12 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
+    
+    /* Ensure content is always visible on mobile */
+    .mobile-fallback {
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 
   /* Reduce motion for users who prefer it */

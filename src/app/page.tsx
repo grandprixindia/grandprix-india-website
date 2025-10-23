@@ -45,7 +45,7 @@ export default function HomePage() {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.1, margin: "-50px" }}
                     transition={{ duration: 0.6 }}
                   >
                     <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
@@ -186,7 +186,7 @@ export default function HomePage() {
               className="text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <MagneticButton href={`${baseUrl}/projects/`} variant="primary">
@@ -226,7 +226,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "-50px" }}
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium mb-6">
