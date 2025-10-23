@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useMobile } from '@/hooks/useMobile';
 
 interface Card3DProps {
   children: React.ReactNode;
@@ -11,24 +10,13 @@ interface Card3DProps {
 
 export default function Card3D({ children, className = '' }: Card3DProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useMobile();
   
-  // Only enable 3D effects on desktop
-  if (isMobile) {
-    return (
-      <div className={`relative h-full ${className}`}>
-        {children}
-      </div>
-    );
-  }
-
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x, { stiffness: 200, damping: 25 });
-  const mouseYSpring = useSpring(y, { stiffness: 200, damping: 25 });
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
 
-  // Reduced rotation angles for better performance
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['3deg', '-3deg']);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-3deg', '3deg']);
 
@@ -66,13 +54,9 @@ export default function Card3D({ children, className = '' }: Card3DProps) {
       }}
       className={`relative h-full ${className}`}
     >
-      <div className="h-full" style={{ transform: 'translateZ(50px)', transformStyle: 'preserve-3d' }}>
+      <div className="h-full" style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}>
         {children}
       </div>
     </motion.div>
   );
 }
-
-
-
-

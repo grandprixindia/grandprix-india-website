@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n';
-// import { useCurrentLocale } from '@/lib/locale-utils';
+import { useCurrentLocale } from '@/lib/locale-utils';
 import { projects } from '@/data/projects';
 import Reveal from '@/components/Reveal';
 import Card3D from '@/components/Card3D';
@@ -14,7 +14,7 @@ import ParallaxSection from '@/components/ParallaxSection';
 import { motion } from 'framer-motion';
 
 export default function HomePage() {
-  const locale = 'en'; // Simplified for performance
+  const locale = useCurrentLocale();
   const t = getTranslations(locale);
   const baseUrl = locale === 'en' ? '' : `/${locale}`;
 

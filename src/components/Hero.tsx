@@ -3,9 +3,7 @@
 import { useRef } from 'react';
 import { Locale } from '@/lib/i18n';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import MagneticButton from './MagneticButton';
-import AnimatedText from './AnimatedText';
-import { useMobile } from '@/hooks/useMobile';
+import Link from 'next/link';
 
 interface HeroProps {
   locale: Locale;
@@ -16,7 +14,6 @@ interface HeroProps {
 export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
   const baseUrl = locale === 'en' ? '' : `/${locale}`;
   const ref = useRef<HTMLElement>(null);
-  const isMobile = useMobile();
   
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -25,102 +22,24 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
-  if (isMobile) {
-    // Mobile version - completely static for maximum performance
-    return (
-      <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Static Background */}
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
-        </div>
-
-        {/* Static Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="filigree-corner p-8 md:p-16 bg-white/10 rounded-lg border border-white/10">
-            {/* Eyebrow */}
-            <p className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-medium">
-              {t.hero.eyebrow}
-            </p>
-
-            {/* Headline */}
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 tracking-tight leading-[1.1]">
-              {t.hero.headline}
-            </h1>
-
-            {/* Subhead */}
-            <p className="text-white/90 text-lg md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed">
-              {t.hero.subhead}
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a
-                href={`${baseUrl}/projects/`}
-                className="px-8 py-4 text-lg font-semibold rounded-full bg-primary text-white hover:bg-primary/90 transition-colors min-w-[220px] text-center"
-              >
-                {t.hero.cta_primary}
-              </a>
-              
-              <a
-                href={`${baseUrl}/about/`}
-                className="px-8 py-4 text-lg font-semibold rounded-full border border-white/70 text-white hover:bg-white hover:text-dark transition-colors min-w-[220px] text-center"
-              >
-                {t.hero.cta_secondary}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // Desktop version - with animations
   return (
     <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+      {/* Background */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
-        <motion.div 
+        <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url(${imageUrl})`,
-            scale
-          }}
+          style={{ backgroundImage: `url(${imageUrl})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
-        
-        {/* Gradient orb */}
-        <div
-          className="absolute top-1/4 left-1/4 w-[200px] h-[200px] rounded-full blur-2xl opacity-15"
-          style={{
-            background: 'radial-gradient(circle, rgba(182,152,73,0.4) 0%, transparent 70%)',
-          }}
-        />
       </motion.div>
-
-      {/* Grid Pattern Overlay */}
-      <div 
-        className="absolute inset-0 z-[1] opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(182,152,73,0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(182,152,73,0.5) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}
-      />
 
       {/* Content */}
       <motion.div 
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ opacity }}
       >
-        <div className="filigree-corner p-8 md:p-16 bg-white/5 backdrop-blur-md rounded-lg border border-white/10">
+        <div className="p-8 md:p-16 bg-white/10 backdrop-blur-md rounded-lg border border-white/10">
           {/* Eyebrow */}
           <motion.p 
             className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-medium"
@@ -131,51 +50,53 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
             {t.hero.eyebrow}
           </motion.p>
 
-          {/* Headline with animated text */}
-          <AnimatedText
-            text={t.hero.headline}
+          {/* Headline */}
+          <motion.h1
             className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 tracking-tight leading-[1.1]"
-            delay={0.2}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {t.hero.headline}
+          </motion.h1>
 
           {/* Subhead */}
           <motion.p
             className="text-white/90 text-lg md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             {t.hero.subhead}
           </motion.p>
 
-          {/* CTAs with magnetic effect */}
+          {/* CTAs */}
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <MagneticButton 
+            <Link 
               href={`${baseUrl}/projects/`}
-              variant="primary"
-              className="min-w-[220px]"
+              className="px-8 py-4 text-lg font-semibold rounded-full bg-primary text-white hover:bg-primary/90 transition-colors min-w-[220px] text-center"
             >
               {t.hero.cta_primary}
-            </MagneticButton>
-            <MagneticButton 
+            </Link>
+            
+            <Link 
               href={`${baseUrl}/about/`}
-              variant="ghost"
-              className="min-w-[220px]"
+              className="px-8 py-4 text-lg font-semibold rounded-full border border-white/70 text-white hover:bg-white hover:text-dark transition-colors min-w-[220px] text-center"
             >
               {t.hero.cta_secondary}
-            </MagneticButton>
+            </Link>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Modern scroll indicator */}
+      {/* Scroll indicator */}
       <motion.div 
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
