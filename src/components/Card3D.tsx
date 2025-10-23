@@ -14,11 +14,12 @@ export default function Card3D({ children, className = '' }: Card3DProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
-  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+  // Optimized spring settings for better performance
+  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 25 });
+  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 25 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['3deg', '-3deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-3deg', '3deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['2deg', '-2deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-2deg', '2deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;

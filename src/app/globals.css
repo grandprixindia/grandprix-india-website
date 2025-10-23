@@ -23,12 +23,31 @@
     will-change: auto;
   }
 
-  /* Simple mobile optimizations */
+  /* Mobile performance optimizations */
   @media (max-width: 768px) {
-    /* Reduce animation intensity on mobile */
+    /* Optimize animations for mobile performance */
     * {
       animation-duration: 0.3s !important;
       transition-duration: 0.2s !important;
+    }
+    
+    /* Optimize transforms for better performance */
+    .transform-3d,
+    [style*="transform"] {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    
+    /* Optimize scroll performance */
+    .overflow-auto,
+    .overflow-scroll {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Optimize backdrop blur performance */
+    .backdrop-blur-md {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
   }
 

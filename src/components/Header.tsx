@@ -27,7 +27,8 @@ export default function Header({ locale, t }: HeaderProps) {
       }
     };
     if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll);
+      // Use passive listener for better scroll performance
+      window.addEventListener('scroll', handleScroll, { passive: true });
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, []);

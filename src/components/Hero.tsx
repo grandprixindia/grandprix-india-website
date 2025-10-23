@@ -20,7 +20,8 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
     offset: ['start start', 'end start']
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  // Optimized transforms with reduced complexity for better performance
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
@@ -29,7 +30,10 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${imageUrl})` }}
+          style={{ 
+            backgroundImage: `url(${imageUrl})`,
+            willChange: 'transform'
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
       </motion.div>
@@ -43,9 +47,9 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
           {/* Eyebrow */}
           <motion.p 
             className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-medium"
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
           >
             {t.hero.eyebrow}
           </motion.p>
@@ -53,9 +57,9 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
           {/* Headline */}
           <motion.h1
             className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 tracking-tight leading-[1.1]"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
           >
             {t.hero.headline}
           </motion.h1>
@@ -63,9 +67,9 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
           {/* Subhead */}
           <motion.p
             className="text-white/90 text-lg md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
           >
             {t.hero.subhead}
           </motion.p>
@@ -73,9 +77,9 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
           {/* CTAs */}
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
           >
             <Link 
               href={`${baseUrl}/projects/`}
