@@ -21,9 +21,10 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
     offset: ['start start', 'end start']
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  // Simplified parallax for better mobile performance
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
   return (
     <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -38,19 +39,11 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
         
-        {/* Simplified gradient orb - reduced from 2 to 1 for better performance */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full blur-3xl opacity-20"
+        {/* Static gradient orb for mobile performance */}
+        <div
+          className="absolute top-1/4 left-1/4 w-[200px] h-[200px] rounded-full blur-2xl opacity-15"
           style={{
-            background: 'radial-gradient(circle, rgba(182,152,73,0.6) 0%, transparent 70%)',
-          }}
-          animate={{
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut'
+            background: 'radial-gradient(circle, rgba(182,152,73,0.4) 0%, transparent 70%)',
           }}
         />
       </motion.div>
@@ -72,26 +65,7 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ opacity }}
       >
-        {/* Simplified particles effect - reduced from 5 to 2 for better performance */}
-        {[...Array(2)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/30 rounded-full"
-            style={{
-              left: `${20 + i * 60}%`,
-              top: `${30 + i * 40}%`,
-            }}
-            animate={{
-              y: [-10, 10, -10],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
+        {/* Particles removed for mobile performance */}
 
         <div className="filigree-corner p-8 md:p-16 bg-white/5 backdrop-blur-md rounded-lg border border-white/10">
           {/* Eyebrow */}

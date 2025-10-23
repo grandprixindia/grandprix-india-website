@@ -10,7 +10,26 @@ interface Card3DProps {
 
 export default function Card3D({ children, className = '' }: Card3DProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
   
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // Only enable 3D effects on desktop
+  if (isMobile) {
+    return (
+      <div className={`relative h-full ${className}`}>
+        {children}
+      </div>
+    );
+  }
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -18,8 +37,8 @@ export default function Card3D({ children, className = '' }: Card3DProps) {
   const mouseYSpring = useSpring(y, { stiffness: 200, damping: 25 });
 
   // Reduced rotation angles for better performance
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['5deg', '-5deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-5deg', '5deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['3deg', '-3deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-3deg', '3deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -55,7 +74,7 @@ export default function Card3D({ children, className = '' }: Card3DProps) {
       }}
       className={`relative h-full ${className}`}
     >
-      <div className="h-full" style={{ transform: 'translateZ(75px)', transformStyle: 'preserve-3d' }}>
+      <div className="h-full" style={{ transform: 'translateZ(50px)', transformStyle: 'preserve-3d' }}>
         {children}
       </div>
     </motion.div>

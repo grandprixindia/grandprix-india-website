@@ -12,12 +12,30 @@
     background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
   }
 
-  /* Performance optimizations */
+  /* Aggressive performance optimizations */
   * {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000;
     perspective: 1000;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+
+  /* Disable animations on mobile */
+  @media (max-width: 768px) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    /* Disable complex transforms on mobile */
+    .transform-3d {
+      transform: none !important;
+      transform-style: flat !important;
+    }
   }
 
   /* Reduce motion for users who prefer it */
