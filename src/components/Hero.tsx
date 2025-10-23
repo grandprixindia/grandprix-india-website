@@ -5,6 +5,7 @@ import { Locale } from '@/lib/i18n';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 import AnimatedText from './AnimatedText';
+import { useMobile } from '@/hooks/useMobile';
 
 interface HeroProps {
   locale: Locale;
@@ -15,17 +16,71 @@ interface HeroProps {
 export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
   const baseUrl = locale === 'en' ? '' : `/${locale}`;
   const ref = useRef<HTMLElement>(null);
+  const isMobile = useMobile();
   
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start']
   });
 
-  // Simplified parallax for better mobile performance
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
+  if (isMobile) {
+    // Mobile version - completely static for maximum performance
+    return (
+      <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Static Background */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
+        </div>
+
+        {/* Static Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="filigree-corner p-8 md:p-16 bg-white/10 rounded-lg border border-white/10">
+            {/* Eyebrow */}
+            <p className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-medium">
+              {t.hero.eyebrow}
+            </p>
+
+            {/* Headline */}
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 tracking-tight leading-[1.1]">
+              {t.hero.headline}
+            </h1>
+
+            {/* Subhead */}
+            <p className="text-white/90 text-lg md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed">
+              {t.hero.subhead}
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a
+                href={`${baseUrl}/projects/`}
+                className="px-8 py-4 text-lg font-semibold rounded-full bg-primary text-white hover:bg-primary/90 transition-colors min-w-[220px] text-center"
+              >
+                {t.hero.cta_primary}
+              </a>
+              
+              <a
+                href={`${baseUrl}/about/`}
+                className="px-8 py-4 text-lg font-semibold rounded-full border border-white/70 text-white hover:bg-white hover:text-dark transition-colors min-w-[220px] text-center"
+              >
+                {t.hero.cta_secondary}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop version - with animations
   return (
     <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -39,7 +94,7 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
         
-        {/* Static gradient orb for mobile performance */}
+        {/* Gradient orb */}
         <div
           className="absolute top-1/4 left-1/4 w-[200px] h-[200px] rounded-full blur-2xl opacity-15"
           style={{
@@ -65,8 +120,6 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ opacity }}
       >
-        {/* Particles removed for mobile performance */}
-
         <div className="filigree-corner p-8 md:p-16 bg-white/5 backdrop-blur-md rounded-lg border border-white/10">
           {/* Eyebrow */}
           <motion.p 
@@ -137,4 +190,3 @@ export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroPro
     </section>
   );
 }
-

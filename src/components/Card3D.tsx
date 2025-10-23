@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useMobile } from '@/hooks/useMobile';
 
 interface Card3DProps {
   children: React.ReactNode;
@@ -10,20 +11,7 @@ interface Card3DProps {
 
 export default function Card3D({ children, className = '' }: Card3DProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(true); // Start with mobile to avoid hydration mismatch
-  
-  useEffect(() => {
-    const checkMobile = () => {
-      if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-      }
-    };
-    checkMobile();
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', checkMobile);
-      return () => window.removeEventListener('resize', checkMobile);
-    }
-  }, []);
+  const isMobile = useMobile();
   
   // Only enable 3D effects on desktop
   if (isMobile) {

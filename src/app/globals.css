@@ -23,18 +23,44 @@
     will-change: auto;
   }
 
-  /* Disable animations on mobile */
+  /* ULTRA-AGGRESSIVE mobile optimizations */
   @media (max-width: 768px) {
     * {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
-    }
-    
-    /* Disable complex transforms on mobile */
-    .transform-3d {
       transform: none !important;
       transform-style: flat !important;
+      will-change: auto !important;
+    }
+    
+    /* Disable all Framer Motion animations on mobile */
+    [data-framer-component] {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+    
+    /* Disable backdrop blur on mobile for performance */
+    .backdrop-blur-md,
+    .backdrop-blur-lg,
+    .backdrop-blur-xl,
+    .backdrop-blur-2xl {
+      backdrop-filter: none !important;
+      background-color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* Simplify gradients on mobile */
+    .bg-gradient-to-b,
+    .bg-gradient-to-r,
+    .bg-gradient-to-br {
+      background: #f8f9fa !important;
+    }
+    
+    /* Disable complex shadows on mobile */
+    .shadow-xl,
+    .shadow-2xl {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     }
   }
 
