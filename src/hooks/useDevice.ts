@@ -9,6 +9,7 @@ export function useDevice() {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const checkDevice = () => {
@@ -41,6 +42,7 @@ export function useDevice() {
           setIsTablet(false);
           setIsLaptop(true);
         }
+        setIsLoaded(true);
       }
     };
 
@@ -54,5 +56,6 @@ export function useDevice() {
     isMobile,
     isTablet,
     isLaptop,
+    isLoaded,
   };
 }

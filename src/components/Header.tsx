@@ -68,9 +68,8 @@ export default function Header({ locale, t }: HeaderProps) {
       {/* Modern Floating Header */}
       <motion.header 
         className="fixed top-4 left-0 right-0 z-50 px-4"
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: 0, opacity: 1 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
         style={{ zIndex: 9999 }}
       >
         <div className="max-w-6xl mx-auto">
