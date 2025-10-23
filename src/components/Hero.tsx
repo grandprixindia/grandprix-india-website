@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 import AnimatedText from './AnimatedText';
 import HeroMobile from './HeroMobile';
-import { useIsMobile } from '@/hooks/useIsMobile';
 
 interface HeroProps {
   locale: Locale;
@@ -15,13 +14,23 @@ interface HeroProps {
 }
 
 export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
-  const isMobile = useIsMobile();
-  
-  // Return mobile-optimized version for mobile devices
-  if (isMobile) {
-    return <HeroMobile locale={locale} t={t} imageUrl={imageUrl} />;
-  }
-  
+  // Use CSS media queries instead of JS detection to avoid SSR issues
+  return (
+    <>
+      {/* Mobile version - hidden on desktop */}
+      <div className="md:hidden">
+        <HeroMobile locale={locale} t={t} imageUrl={imageUrl} />
+      </div>
+      
+      {/* Desktop version - hidden on mobile */}
+      <div className="hidden md:block">
+        <HeroDesktop locale={locale} t={t} imageUrl={imageUrl} />
+      </div>
+    </>
+  );
+}
+
+function HeroDesktop({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
   const baseUrl = locale === 'en' ? '' : `/${locale}`;
   const ref = useRef<HTMLElement>(null);
   

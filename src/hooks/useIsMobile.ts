@@ -6,6 +6,9 @@ export function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if we're on the client side
+    if (typeof window === 'undefined') return;
+
     const checkIsMobile = () => {
       const width = window.innerWidth;
       setIsMobile(width < 768); // md breakpoint
