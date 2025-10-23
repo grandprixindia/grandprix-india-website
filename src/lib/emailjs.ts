@@ -26,7 +26,8 @@ export const sendEmail = async (formData: {
       from_email: formData.email,
       subject: formData.subject,
       message: formData.message,
-      to_email: 'info@grandprixindia.in', // Your email address
+      to_email: 'info@grandprixindia.in',
+      to_name: 'Grand Prix India Team',
     };
 
     const response = await emailjs.send(
