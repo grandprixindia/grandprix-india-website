@@ -16,7 +16,7 @@ export default function AnimatedText({ text, className = '', delay = 0 }: Animat
     visible: (i = 1) => ({
       opacity: 1,
       transition: { 
-        staggerChildren: 0.12, 
+        staggerChildren: 0.08, // Reduced from 0.12 for faster animation
         delayChildren: delay 
       },
     }),
@@ -28,13 +28,13 @@ export default function AnimatedText({ text, className = '', delay = 0 }: Animat
       y: 0,
       transition: {
         type: 'spring' as const,
-        damping: 12,
-        stiffness: 100,
+        damping: 15, // Increased for snappier animation
+        stiffness: 120, // Increased for faster animation
       },
     },
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 15, // Reduced from 20 for subtler effect
     },
   };
 
