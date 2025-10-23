@@ -68,8 +68,9 @@ export default function Header({ locale, t }: HeaderProps) {
       {/* Modern Floating Header */}
       <motion.header 
         className="fixed top-4 left-0 right-0 z-50 px-4"
-        initial={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         style={{ zIndex: 9999 }}
       >
         <div className="max-w-6xl mx-auto">
@@ -79,7 +80,7 @@ export default function Header({ locale, t }: HeaderProps) {
                 ? 'bg-white/95 backdrop-blur-2xl shadow-2xl border border-gray-200/50'
                 : 'bg-white/80 backdrop-blur-xl shadow-xl border border-white/60'
             }`}
-            style={{ opacity: scrolled ? 1 : headerOpacity }}
+            style={{ opacity: 1 }}
           >
             {/* Subtle progress indicator */}
             <motion.div 
