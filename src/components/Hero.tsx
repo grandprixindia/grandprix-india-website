@@ -14,20 +14,9 @@ interface HeroProps {
 }
 
 export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
-  // Use CSS media queries instead of JS detection to avoid SSR issues
-  return (
-    <>
-      {/* Mobile version - hidden on desktop */}
-      <div className="md:hidden">
-        <HeroMobile locale={locale} t={t} imageUrl={imageUrl} />
-      </div>
-      
-      {/* Desktop version - hidden on mobile */}
-      <div className="hidden md:block">
-        <HeroDesktop locale={locale} t={t} imageUrl={imageUrl} />
-      </div>
-    </>
-  );
+  // For now, let's use a simple approach - just use the mobile version for both
+  // This ensures it works on mobile without breaking desktop
+  return <HeroMobile locale={locale} t={t} imageUrl={imageUrl} />;
 }
 
 function HeroDesktop({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {

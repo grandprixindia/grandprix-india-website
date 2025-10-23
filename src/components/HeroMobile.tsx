@@ -26,11 +26,19 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
         
-        {/* Single static gradient orb instead of animated ones */}
+        {/* Gradient orbs - more for desktop, fewer for mobile */}
         <div
-          className="absolute top-0 left-0 w-[300px] h-[300px] rounded-full blur-3xl opacity-20"
+          className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full blur-3xl opacity-20 md:opacity-30"
           style={{
             background: 'radial-gradient(circle, rgba(182,152,73,0.6) 0%, transparent 70%)',
+          }}
+        />
+        
+        {/* Additional orb for desktop */}
+        <div
+          className="hidden md:block absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-20"
+          style={{
+            background: 'radial-gradient(circle, rgba(182,152,73,0.4) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -63,7 +71,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
           {/* Headline with simplified animation */}
           <AnimatedTextMobile
             text={t.hero.headline}
-            className="font-serif text-3xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
+            className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
             delay={0.2}
           />
 
@@ -77,9 +85,9 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
             {t.hero.subhead}
           </motion.p>
 
-          {/* CTAs with simplified layout */}
+          {/* CTAs with responsive layout */}
           <motion.div
-            className="flex flex-col gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -87,14 +95,14 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
             <MagneticButtonMobile 
               href={`${baseUrl}/projects/`}
               variant="primary"
-              className="w-full max-w-[280px]"
+              className="w-full sm:w-auto min-w-[220px]"
             >
               {t.hero.cta_primary}
             </MagneticButtonMobile>
             <MagneticButtonMobile 
               href={`${baseUrl}/about/`}
               variant="ghost"
-              className="w-full max-w-[280px]"
+              className="w-full sm:w-auto min-w-[220px]"
             >
               {t.hero.cta_secondary}
             </MagneticButtonMobile>
