@@ -32,7 +32,8 @@ export const sendEmail = async (formData: {
     const response = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
       EMAILJS_CONFIG.templateId,
-      templateParams
+      templateParams,
+      EMAILJS_CONFIG.publicKey
     );
 
     return { success: true, response };
