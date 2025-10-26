@@ -3,7 +3,6 @@
 import { Locale } from '@/lib/i18n';
 import { motion } from 'framer-motion';
 import MagneticButtonMobile from './MagneticButtonMobile';
-import AnimatedTextMobile from './AnimatedTextMobile';
 
 interface HeroMobileProps {
   locale: Locale;
@@ -68,12 +67,15 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
             {t.hero.eyebrow}
           </motion.p>
 
-          {/* Headline with simplified animation */}
-          <AnimatedTextMobile
-            text={t.hero.headline}
+          {/* Headline with simple fade-in */}
+          <motion.h1
             className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
-            delay={0.2}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {t.hero.headline}
+          </motion.h1>
 
           {/* Subhead */}
           <motion.p
