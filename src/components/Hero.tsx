@@ -14,16 +14,12 @@ interface HeroProps {
 }
 
 export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
-  // Safety check with console logging for debugging
-  console.log('Hero component - locale:', locale, 't:', t, 't.hero:', t?.hero);
-  
+  // Safety check
   if (!t || !t.hero) {
-    console.error('Hero component - Missing translations!', { t, hasHero: !!t?.hero });
     return (
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-dark">
         <div className="text-white text-center">
           <h1>Loading...</h1>
-          <p className="mt-4 text-sm">Debug: locale={locale}</p>
         </div>
       </section>
     );
