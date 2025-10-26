@@ -34,7 +34,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
             backgroundImage: `url(${imageUrl})`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/50 to-dark/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark/60" />
         
         {/* Gradient orbs - more for desktop, fewer for mobile */}
         <div
@@ -67,10 +67,10 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="filigree-corner p-6 md:p-12 bg-white/5 backdrop-blur-md rounded-lg border border-white/10">
+        <div className="filigree-corner p-6 md:p-12 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 shadow-2xl">
           {/* Eyebrow */}
           <motion.p 
-            className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium"
+            className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium drop-shadow-lg"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -80,7 +80,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
 
           {/* Headline with simple fade-in */}
           <motion.h1
-            className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
+            className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1] drop-shadow-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -90,7 +90,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
 
           {/* Subhead */}
           <motion.p
-            className="text-white/90 text-base md:text-xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed"
+            className="text-white text-base md:text-xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
