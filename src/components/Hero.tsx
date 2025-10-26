@@ -14,6 +14,17 @@ interface HeroProps {
 }
 
 export default function Hero({ locale, t, imageUrl = '/racetrack.jpg' }: HeroProps) {
+  // Safety check
+  if (!t || !t.hero) {
+    return (
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-dark">
+        <div className="text-white text-center">
+          <h1>Loading...</h1>
+        </div>
+      </section>
+    );
+  }
+  
   // For now, let's use a simple approach - just use the mobile version for both
   // This ensures it works on mobile without breaking desktop
   return <HeroMobile locale={locale} t={t} imageUrl={imageUrl} />;

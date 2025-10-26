@@ -13,6 +13,17 @@ interface HeroMobileProps {
 export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: HeroMobileProps) {
   const baseUrl = locale === 'en' ? '' : `/${locale}`;
 
+  // Safety check - return early if no translations
+  if (!t || !t.hero) {
+    return (
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-dark">
+        <div className="text-white text-center">
+          <h1>Loading...</h1>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Simplified Background - No parallax on mobile */}
