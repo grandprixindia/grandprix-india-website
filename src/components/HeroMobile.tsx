@@ -21,7 +21,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
   // Safety check - return early if no translations
