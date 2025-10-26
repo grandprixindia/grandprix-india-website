@@ -70,7 +70,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
         <div className="filigree-corner p-6 md:p-12 bg-black/60 backdrop-blur-md rounded-lg border border-white/30 shadow-2xl">
           {/* Eyebrow */}
           <motion.p 
-            className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6 font-bold drop-shadow-2xl"
+            className="text-primary text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -80,22 +80,20 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
 
           {/* Headline with simple fade-in */}
           <motion.h1
-            className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1] font-bold drop-shadow-[0_0_20px_rgba(0,0,0,1)]"
+            className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            style={{ textShadow: '0 0 30px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,0.8)' }}
           >
             {t.hero.headline}
           </motion.h1>
 
           {/* Subhead */}
           <motion.p
-            className="text-white text-base md:text-xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed font-semibold"
+            className="text-white/90 text-base md:text-xl max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
-            style={{ textShadow: '0 0 20px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8)' }}
           >
             {t.hero.subhead}
           </motion.p>
