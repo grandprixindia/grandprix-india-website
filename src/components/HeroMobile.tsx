@@ -36,19 +36,39 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/30 to-dark/40" />
         
-        {/* Gradient orbs - more for desktop, fewer for mobile */}
-        <div
+        {/* Animated gradient orbs */}
+        <motion.div
           className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full blur-3xl opacity-20 md:opacity-30"
           style={{
             background: 'radial-gradient(circle, rgba(182,152,73,0.6) 0%, transparent 70%)',
           }}
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
         />
         
         {/* Additional orb for desktop */}
-        <div
+        <motion.div
           className="hidden md:block absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-20"
           style={{
             background: 'radial-gradient(circle, rgba(182,152,73,0.4) 0%, transparent 70%)',
+          }}
+          animate={{
+            x: [0, -50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut'
           }}
         />
       </div>

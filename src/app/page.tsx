@@ -51,11 +51,11 @@ export default function HomePage() {
                     <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
                       About GPI
                     </span>
-                    <h2 className="font-serif text-4xl md:text-6xl font-bold text-dark mb-6 leading-tight drop-shadow-sm">
+                    <h2 className="font-serif text-4xl md:text-6xl text-dark mb-6 leading-tight drop-shadow-sm">
                       {t.home.about_title}
                     </h2>
                     <div className="w-20 h-1 bg-gradient-gold mb-6" />
-                    <p className="text-dark text-lg mb-8 leading-relaxed font-medium drop-shadow-sm">
+                    <p className="text-dark text-lg mb-8 leading-relaxed drop-shadow-sm">
                       {t.home.about_snippet}
                     </p>
                     <MagneticButton href={`${baseUrl}/about/`} variant="secondary">
@@ -138,10 +138,10 @@ export default function HomePage() {
               <span className="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
                 Our Work
               </span>
-              <h2 className="font-serif text-4xl md:text-6xl mb-6 font-bold text-white drop-shadow-lg">
+              <h2 className="font-serif text-4xl md:text-6xl mb-6 text-white drop-shadow-lg">
                 {t.home.projects_title}
               </h2>
-              <p className="text-white text-lg max-w-2xl mx-auto font-medium drop-shadow">
+              <p className="text-white text-lg max-w-2xl mx-auto drop-shadow">
                 {t.home.projects_subtitle}
               </p>
             </motion.div>
@@ -165,7 +165,7 @@ export default function HomePage() {
                         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500" />
                       </div>
                       <div className="p-6 flex flex-col flex-grow">
-                        <h3 className="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors line-clamp-2 drop-shadow-sm">
+                        <h3 className="font-serif text-xl text-white mb-3 group-hover:text-primary transition-colors line-clamp-2 drop-shadow-sm">
                           {project.title}
                         </h3>
                         <p className="text-white text-sm line-clamp-3 leading-relaxed mb-4 flex-grow drop-shadow-sm">
@@ -234,11 +234,11 @@ export default function HomePage() {
               <span className="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium mb-6">
                 Get in Touch
               </span>
-              <h2 className="font-serif text-4xl md:text-6xl mb-6 font-bold text-white drop-shadow-lg">
+              <h2 className="font-serif text-4xl md:text-6xl mb-6 text-white drop-shadow-lg">
                 {t.home.contact_title}
               </h2>
               <div className="w-20 h-1 bg-gradient-gold mx-auto mb-8" />
-              <p className="text-white text-lg mb-12 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow">
+              <p className="text-white text-lg mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow">
                 {t.home.contact_subtitle}
               </p>
               <MagneticButton href={`${baseUrl}/contact/`} variant="primary" className="text-lg px-12 py-5">
