@@ -1,7 +1,8 @@
 'use client';
 
 import { Locale } from '@/lib/i18n';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import MagneticButtonMobile from './MagneticButtonMobile';
 
 interface HeroMobileProps {
@@ -12,6 +13,16 @@ interface HeroMobileProps {
 
 export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: HeroMobileProps) {
   const baseUrl = locale === 'en' ? '' : `/${locale}`;
+  const ref = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start']
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
   // Safety check - return early if no translations
   if (!t || !t.hero) {
@@ -25,13 +36,14 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
   }
 
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Simplified Background - No parallax on mobile */}
-      <div className="absolute inset-0 z-0">
-        <div 
+    <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div className="absolute inset-0 z-0" style={{ y }}>
+        <motion.div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: `url(${imageUrl})`,
+            scale
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/30 to-dark/40" />
@@ -71,7 +83,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
             ease: 'easeInOut'
           }}
         />
-      </div>
+      </motion.div>
 
       {/* Simplified Grid Pattern - No animation */}
       <div 
@@ -86,7 +98,10 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <motion.div 
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        style={{ opacity }}
+      >
         <div className="filigree-corner p-6 md:p-12 bg-black/60 backdrop-blur-md rounded-lg border border-white/30 shadow-2xl">
           {/* Eyebrow */}
           <motion.p 
@@ -141,7 +156,7 @@ export default function HeroMobile({ locale, t, imageUrl = '/racetrack.jpg' }: H
             </MagneticButtonMobile>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Simplified scroll indicator */}
       <motion.div 
