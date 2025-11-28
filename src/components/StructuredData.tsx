@@ -4,8 +4,8 @@ export function OrganizationSchema() {
     "@type": "Organization",
     "name": "Grandprix (India) Private Limited",
     "alternateName": "Grand Prix India",
-    "url": "https://grandprixindia.com",
-    "logo": "https://grandprixindia.com/logo.svg",
+    "url": "https://grandprixindia.in",
+    "logo": "https://grandprixindia.in/logo.svg",
     "description": "Grand Prix India brings world-class racing experiences to India. Pioneering motorsport excellence since 2006.",
     "foundingDate": "2006",
     "address": {
@@ -45,7 +45,7 @@ export function ProjectSchema({ project }: { project: { title: string; descripti
     "organizer": {
       "@type": "Organization",
       "name": "Grandprix (India) Private Limited",
-      "url": "https://grandprixindia.com"
+      "url": "https://grandprixindia.in"
     }
   };
 

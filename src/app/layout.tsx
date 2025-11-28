@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: 'Grand Prix India brings world-class racing experiences to India. Pioneering motorsport excellence since 2006.',
   keywords: 'Grand Prix India, motorsport, racing, India, GPI, Formula racing',
   authors: [{ name: 'Grandprix (India) Private Limited' }],
-  metadataBase: new URL('https://grandprixindia.com'),
+  metadataBase: new URL('https://grandprixindia.in'),
   openGraph: {
     title: 'Grand Prix India - Pioneering Motorsport Excellence',
     description: 'Grand Prix India brings world-class racing experiences to India. Pioneering motorsport excellence since 2006.',
