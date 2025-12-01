@@ -3,10 +3,11 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Grandprix (India) Private Limited",
-    "alternateName": "Grand Prix India",
+    "alternateName": ["Grand Prix India", "Grand Prix India Pvt Ltd", "GPI", "Grandprix India"],
+    "legalName": "Grandprix (India) Private Limited",
     "url": "https://grandprixindia.in",
     "logo": "https://grandprixindia.in/logo.svg",
-    "description": "Grand Prix India brings world-class racing experiences to India. Pioneering motorsport excellence since 2006.",
+    "description": "Grand Prix India Pvt Ltd - Leading motorsport and entertainment company in India. Grandprix (India) Private Limited delivers world-class racing events, Formula 1, MotoGP, and sports infrastructure since 2006.",
     "foundingDate": "2006",
     "address": {
       "@type": "PostalAddress",
