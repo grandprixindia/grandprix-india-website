@@ -91,3 +91,5 @@ Everything that affects Google indexing is properly configured with `grandprixin
 The only remaining step is submitting the site to Google Search Console, which is a manual process outside of the codebase.
 
 
+
+

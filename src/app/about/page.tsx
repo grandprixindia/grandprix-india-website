@@ -7,6 +7,7 @@ import { useCurrentLocale } from '@/lib/locale-utils';
 import { motion } from 'framer-motion';
 import Reveal from '@/components/Reveal';
 import AnimatedText from '@/components/AnimatedText';
+import AboutPageSchemas from '@/components/AboutPageSchemas';
 
 export default function AboutPage() {
   const locale = useCurrentLocale();
@@ -21,6 +22,7 @@ export default function AboutPage() {
 
   return (
     <div>
+      <AboutPageSchemas />
       <Header locale={locale} t={t} />
       
       <main id="main-content">
@@ -147,6 +149,7 @@ export default function AboutPage() {
                     <div 
                       className="h-80 md:h-full bg-cover bg-center"
                       style={{ backgroundImage: 'url(/assets/placeholders/founder.jpg)' }}
+                      aria-label="Bharat Sadanand Shetty, Founder and Managing Director of Grand Prix India"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-dark/20" />
                   </motion.div>

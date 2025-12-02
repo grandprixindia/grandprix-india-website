@@ -28,6 +28,7 @@ export default function ProjectCard({
         <div
           className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
           style={{ backgroundImage: `url(${imageUrl})` }}
+          aria-label={`${title} project image`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent" />
       </div>

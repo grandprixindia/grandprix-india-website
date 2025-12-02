@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
-import { OrganizationSchema } from '@/components/StructuredData';
+import { OrganizationSchema, LocalBusinessSchema } from '@/components/StructuredData';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,6 +29,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'Grand Prix India',
     images: [
+      {
+        url: '/logo.svg',
+        width: 512,
+        height: 512,
+        alt: 'Grand Prix India Logo',
+        type: 'image/svg+xml',
+      },
       {
         url: '/assets/placeholders/hero-1.jpg',
         width: 1920,
@@ -66,7 +73,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="image_src" href="https://grandprixindia.in/logo.svg" />
+        <meta property="og:logo" content="https://grandprixindia.in/logo.svg" />
+        <meta name="twitter:logo" content="https://grandprixindia.in/logo.svg" />
         <OrganizationSchema />
+        <LocalBusinessSchema />
       </head>
       <body>{children}</body>
     </html>

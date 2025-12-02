@@ -140,6 +140,7 @@ export default function MediaPage() {
                     }}
                     className="relative h-72 bg-cover bg-center rounded-2xl overflow-hidden group cursor-pointer shadow-lg"
                     style={{ backgroundImage: `url(${item.thumbnail})` }}
+                    aria-label={item.alt || `Media item: ${item.caption || item.id}`}
                     onClick={() => {
                       setSelectedItem(item);
                       if (item.type === 'video') {

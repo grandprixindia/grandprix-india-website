@@ -10,6 +10,7 @@ import { useCurrentLocale } from '@/lib/locale-utils';
 import { projects, Project } from '@/data/projects';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedText from '@/components/AnimatedText';
+import ProjectsPageSchemas from '@/components/ProjectsPageSchemas';
 
 export default function ProjectsPage() {
   const locale = useCurrentLocale();
@@ -25,6 +26,7 @@ export default function ProjectsPage() {
 
   return (
     <div>
+      <ProjectsPageSchemas />
       <Header locale={locale} t={t} />
       
       <main id="main-content">
@@ -143,6 +145,7 @@ export default function ProjectsPage() {
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${selectedProject.imageUrl})` }}
+                aria-label={`${selectedProject.title} project image`}
               />
             </div>
             <div className="flex items-center gap-4 mb-6">

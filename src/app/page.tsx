@@ -28,10 +28,11 @@ export default function HomePage() {
         {/* About Section */}
         <section className="relative py-32 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
           {/* Background image with overlay */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-5" aria-hidden="true">
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: 'url(/assets/placeholders/about-company.jpg)' }}
+              aria-label="Grand Prix India company background"
             />
           </div>
           {/* Decorative elements */}
