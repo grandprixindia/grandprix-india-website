@@ -25,7 +25,7 @@ export default function Footer({ locale, t }: FooterProps) {
           <div className="lg:col-span-2">
             <Link href={`${baseUrl}/`} className="inline-block mb-6">
               <img
-                src="/logo.svg"
+                src="/logo-square.svg"
                 alt="Grand Prix India"
                 className="h-12 w-auto"
               />

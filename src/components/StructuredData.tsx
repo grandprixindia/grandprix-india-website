@@ -8,18 +8,18 @@ export function OrganizationSchema() {
     "url": "https://grandprixindia.in",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://grandprixindia.in/logo.svg",
-      "contentUrl": "https://grandprixindia.in/logo.svg",
-      "width": 512,
-      "height": 512,
+      "url": "https://grandprixindia.in/logo-square.svg",
+      "contentUrl": "https://grandprixindia.in/logo-square.svg",
+      "width": 953,
+      "height": 953,
       "caption": "Grand Prix India Logo"
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://grandprixindia.in/logo.svg",
-      "contentUrl": "https://grandprixindia.in/logo.svg",
-      "width": 512,
-      "height": 512,
+      "url": "https://grandprixindia.in/logo-square.svg",
+      "contentUrl": "https://grandprixindia.in/logo-square.svg",
+      "width": 953,
+      "height": 953,
       "caption": "Grand Prix India Logo"
     },
     "description": "Grand Prix India Pvt Ltd - Leading motorsport and entertainment company in India. Grandprix (India) Private Limited delivers world-class racing events, Formula 1, MotoGP, and sports infrastructure since 2006.",
@@ -57,18 +57,18 @@ export function LocalBusinessSchema() {
     "alternateName": "Grand Prix India",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://grandprixindia.in/logo.svg",
-      "contentUrl": "https://grandprixindia.in/logo.svg",
-      "width": 512,
-      "height": 512,
+      "url": "https://grandprixindia.in/logo-square.svg",
+      "contentUrl": "https://grandprixindia.in/logo-square.svg",
+      "width": 953,
+      "height": 953,
       "caption": "Grand Prix India Logo"
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://grandprixindia.in/logo.svg",
-      "contentUrl": "https://grandprixindia.in/logo.svg",
-      "width": 512,
-      "height": 512,
+      "url": "https://grandprixindia.in/logo-square.svg",
+      "contentUrl": "https://grandprixindia.in/logo-square.svg",
+      "width": 953,
+      "height": 953,
       "caption": "Grand Prix India Logo"
     },
     "url": "https://grandprixindia.in",

@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     siteName: 'Grand Prix India',
     images: [
       {
-        url: '/logo.svg',
-        width: 512,
-        height: 512,
+        url: '/logo-square.svg',
+        width: 953,
+        height: 953,
         alt: 'Grand Prix India Logo',
         type: 'image/svg+xml',
       },
@@ -73,9 +73,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="image_src" href="https://grandprixindia.in/logo.svg" />
-        <meta property="og:logo" content="https://grandprixindia.in/logo.svg" />
-        <meta name="twitter:logo" content="https://grandprixindia.in/logo.svg" />
+        <link rel="image_src" href="https://grandprixindia.in/logo-square.svg" />
+        <meta property="og:logo" content="https://grandprixindia.in/logo-square.svg" />
+        <meta name="twitter:logo" content="https://grandprixindia.in/logo-square.svg" />
         <OrganizationSchema />
         <LocalBusinessSchema />
       </head>

@@ -86,7 +86,7 @@ export default function Header({ locale, t }: HeaderProps) {
               {/* Logo */}
               <Link href={`${baseUrl}/`} className="flex items-center z-10">
                 <motion.img
-                  src="/logo.svg"
+                  src="/logo-square.svg"
                   alt="Grand Prix India"
                   className="h-9 w-auto"
                   whileHover={{ scale: 1.05 }}
