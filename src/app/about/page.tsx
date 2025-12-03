@@ -90,7 +90,7 @@ export default function AboutPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.img
-                      src="/logo-square.svg"
+                      src="/logo.svg"
                       alt="Grand Prix India logo"
                       className="max-h-72 w-auto"
                       animate={{ rotate: [0, 5, 0, -5, 0] }}

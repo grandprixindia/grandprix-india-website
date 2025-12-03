@@ -71,7 +71,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo-square.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/logo-square.svg" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="image_src" href="https://grandprixindia.in/logo-square.svg" />
         <meta property="og:logo" content="https://grandprixindia.in/logo-square.svg" />
