@@ -180,3 +180,4 @@ Google can use different sizes for different contexts:
 - [Schema.org Organization](https://schema.org/Organization)
 - [Structured Data Testing Tool](https://search.google.com/test/rich-results)
 
+
